@@ -11,13 +11,18 @@ exports.checkLogin = async (req,res,next)=>{
         }
         const decoded = await jwt.verify(token, process.env.JWT_SECRET);
     
-        const user = await userModel.findByPk(decoded.id);
+        // let user 
+        // for (const x of DB.users){
+        //     if (x.id === id){
+        //         user = x
+        //     }
+        // } 
 
-        if (user === null) {
-            return res.status(404).json({
-                message: 'Authentication Failed: User not found'
-            })
-        }
+        // if (user === null) {
+        //     return res.status(404).json({
+        //         message: 'Authentication Failed: User not found'
+        //     })
+        // }
         req.user = decoded;
         next()
     } catch (error) {

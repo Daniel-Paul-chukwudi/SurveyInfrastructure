@@ -1,5 +1,15 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "366327370",
+      "fullName": "daniel p",
+      "email": "admin2",
+      "phoneNumber": "123456",
+      "password": "admin",
+      "totalPoints": 0,
+      "totalCompleted": 0
+    }
+  ],
   "surveys": [
     {
       "id": "000",
@@ -572,7 +582,7 @@
     }
   ],
   "admin": {
-    "userName":"ADMIN",
-    "password":"AdminPrime"
+    "userName": "ADMIN",
+    "password": "AdminPrime"
   }
 }
