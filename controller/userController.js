@@ -53,9 +53,9 @@ exports.createUser = async (req,res) =>{
 exports.createUserFromDb = async (req,res) =>{
     try {
 
-        const {firstName,lastName,email,phoneNumber,password,address,city,country} = req.body
+        const {firstName,lastName,email,phoneNumber,password} = req.body
 
-        if(!firstName || !lastName || !email || !phoneNumber || !password || !address || !city || !country){
+        if(!firstName || !lastName || !email || !phoneNumber || !password){
             return res.status(403).json({
                 message: "Please enter all fields"
             })
@@ -95,9 +95,6 @@ exports.createUserFromDb = async (req,res) =>{
             email,
             phoneNumber,
             password: hashedPassword,
-            address,
-            city,
-            country,
             totalPoints : 0,
             totalCompleted: 0
         }
@@ -263,7 +260,7 @@ exports.LoginAdminFromDb = async (req,res) =>{
 exports.enterBankDetails = async (req,res) =>{
     try {
         const id = req.params.id
-        const {bankName,cardHolder,cardNumber,expiryDate,iban,cvv} = req.body
+        const {bankName,cardHolder,cardNumber,expiryDate,iban,cvv,address,city,country} = req.body
 
         // if(!accountNumber || !date){
         //     return res.status(403).json({
