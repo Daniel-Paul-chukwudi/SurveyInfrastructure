@@ -1,0 +1,630 @@
+{
+  "users": [
+    {
+      "id": "736630539",
+      "fullName": "daniel",
+      "email": "admin1",
+      "phoneNumber": "123456",
+      "password": "admin",
+      "totalPoints": "undefined5",
+      "totalCompleted": null,
+      "surveysCompleted": [
+        {
+          "survey": "001",
+          "dateCompleted": 1776202314677
+        }
+      ]
+    },
+    {
+      "id": "691005259",
+      "fullName": "daniel",
+      "email": "admin1",
+      "phoneNumber": "123456",
+      "password": "admin"
+    },
+    {
+      "id": "740276362",
+      "fullName": "daniel",
+      "email": "admin1",
+      "phoneNumber": "123456",
+      "password": "admin",
+      "totalPoints": "5",
+      "totalCompleted": 3,
+      "surveysCompleted": [
+        {
+          "survey": "001",
+          "dateCompleted": 1776202733572
+        }
+      ]
+    },
+    {
+      "id": "798777274",
+      "fullName": "daniel p",
+      "email": "admin2",
+      "phoneNumber": "123456",
+      "password": "admin",
+      "totalPoints": 0,
+      "totalCompleted": 0
+    },
+    {
+      "id": "781869665",
+      "fullName": "daniel p",
+      "email": "admin2",
+      "phoneNumber": "123456",
+      "password": "admin",
+      "totalPoints": 0,
+      "totalCompleted": 0
+    }
+  ],
+  "surveys": [
+    {
+      "id": "000",
+      "category": "tech",
+      "title": "tech in daily life",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 1,
+      "questions": [
+        {
+          "question": "why are you short",
+          "options": [
+            "yes",
+            "no",
+            "maybe",
+            "daniel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "001",
+      "category": "tech",
+      "title": "AI usage",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "How often do you use AI tools?",
+          "options": [
+            "Daily",
+            "Weekly",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "What do you use AI for most?",
+          "options": [
+            "Work",
+            "Learning",
+            "Entertainment",
+            "Exploring"
+          ]
+        },
+        {
+          "question": "Do you trust AI responses?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "How easy is AI to use?",
+          "options": [
+            "Very easy",
+            "Easy",
+            "Hard",
+            "Very hard"
+          ]
+        },
+        {
+          "question": "Is AI important in your life?",
+          "options": [
+            "Very",
+            "Somewhat",
+            "Slightly",
+            "Not at all"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "category": "tech",
+      "title": "Social media habits",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "How often do you use social media?",
+          "options": [
+            "Daily",
+            "Weekly",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do trends influence you?",
+          "options": [
+            "A lot",
+            "Sometimes",
+            "Rarely",
+            "Not at all"
+          ]
+        },
+        {
+          "question": "Do you create content?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you trust influencers?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        },
+        {
+          "question": "Would you quit social media?",
+          "options": [
+            "Yes",
+            "Maybe",
+            "Hard to say",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "category": "lifestyle",
+      "title": "Daily habits",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "Do you follow a routine?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "How productive are you?",
+          "options": [
+            "Very",
+            "Moderate",
+            "Low",
+            "None"
+          ]
+        },
+        {
+          "question": "Do you plan your day?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "How early do you wake up?",
+          "options": [
+            "Very early",
+            "Early",
+            "Late",
+            "Very late"
+          ]
+        },
+        {
+          "question": "Do you track habits?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "category": "lifestyle",
+      "title": "Fitness",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "How often do you exercise?",
+          "options": [
+            "Daily",
+            "Weekly",
+            "Occasionally",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you follow a diet?",
+          "options": [
+            "Strictly",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "How important is fitness?",
+          "options": [
+            "Very",
+            "Moderate",
+            "Low",
+            "None"
+          ]
+        },
+        {
+          "question": "Do you go to the gym?",
+          "options": [
+            "Regularly",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you track your health?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "category": "finance",
+      "title": "Spending habits",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "Do you track your expenses?",
+          "options": [
+            "Apps",
+            "Manual",
+            "Memory",
+            "I don’t"
+          ]
+        },
+        {
+          "question": "Do you overspend?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "What do you spend most on?",
+          "options": [
+            "Food",
+            "Bills",
+            "Shopping",
+            "Entertainment"
+          ]
+        },
+        {
+          "question": "Do you budget your money?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you impulse buy?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "category": "finance",
+      "title": "Saving behavior",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "Do you save regularly?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        },
+        {
+          "question": "Why do you save?",
+          "options": [
+            "Security",
+            "Goals",
+            "Emergency",
+            "Nothing"
+          ]
+        },
+        {
+          "question": "How disciplined are you with savings?",
+          "options": [
+            "High",
+            "Moderate",
+            "Low",
+            "None"
+          ]
+        },
+        {
+          "question": "Preferred saving method?",
+          "options": [
+            "Bank",
+            "Cash",
+            "Apps",
+            "None"
+          ]
+        },
+        {
+          "question": "Do you have an emergency fund?",
+          "options": [
+            "Yes",
+            "Planning",
+            "No idea",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "category": "entertainment",
+      "title": "Movies",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "How often do you watch movies?",
+          "options": [
+            "Daily",
+            "Weekly",
+            "Occasionally",
+            "Rarely"
+          ]
+        },
+        {
+          "question": "Favorite genre?",
+          "options": [
+            "Action",
+            "Comedy",
+            "Drama",
+            "Sci-fi"
+          ]
+        },
+        {
+          "question": "Do you binge-watch?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Cinema or home?",
+          "options": [
+            "Cinema",
+            "Home",
+            "Both",
+            "None"
+          ]
+        },
+        {
+          "question": "Do reviews influence you?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "category": "entertainment",
+      "title": "Music",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "How often do you listen to music?",
+          "options": [
+            "Daily",
+            "Weekly",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Favorite genre?",
+          "options": [
+            "Afrobeats",
+            "Hip-hop",
+            "Pop",
+            "Other"
+          ]
+        },
+        {
+          "question": "Do you attend concerts?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you listen while working?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Streaming or downloads?",
+          "options": [
+            "Streaming",
+            "Downloads",
+            "Both",
+            "None"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "009",
+      "category": "education",
+      "title": "Learning style",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "Preferred learning method?",
+          "options": [
+            "Videos",
+            "Reading",
+            "Practice",
+            "Mixed"
+          ]
+        },
+        {
+          "question": "Do you enjoy learning?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you self-learn?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        },
+        {
+          "question": "How is your focus span?",
+          "options": [
+            "High",
+            "Moderate",
+            "Low",
+            "Very low"
+          ]
+        },
+        {
+          "question": "Do you revise what you learn?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "010",
+      "category": "education",
+      "title": "Online learning",
+      "points": "5",
+      "allocatedTime": "10",
+      "totalQuestions": 5,
+      "questions": [
+        {
+          "question": "Do you take online courses?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Preferred platform?",
+          "options": [
+            "YouTube",
+            "Udemy",
+            "Coursera",
+            "Other"
+          ]
+        },
+        {
+          "question": "Do you complete courses?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ]
+        },
+        {
+          "question": "Do you prefer online learning?",
+          "options": [
+            "Yes",
+            "Sometimes",
+            "Rarely",
+            "No"
+          ]
+        },
+        {
+          "question": "Are certificates important?",
+          "options": [
+            "Very",
+            "Somewhat",
+            "Slightly",
+            "Not at all"
+          ]
+        }
+      ]
+    }
+  ]
+}
