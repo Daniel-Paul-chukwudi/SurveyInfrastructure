@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const {createUser,getAll,createUserFromDb,getAllFromDb,LoginUserFromDb} = require('../controller/userController')
+const {checkLogin} = require('../middleware/auth')
+const {createUser,getAll,createUserFromDb,getAllFromDb,LoginUserFromDb,getOneFromDb,LoginAdminFromDb,enterBankDetails} = require('../controller/userController')
 
 router.post('/user',createUser)
 
@@ -9,8 +10,13 @@ router.post('/Duser',createUserFromDb)
 
 router.post('/DLuser',LoginUserFromDb)
 
-router.get('/Duser',getAllFromDb)
+router.get('/Duser',checkLogin ,getAllFromDb)
 
+router.get('/Duser/:id',getOneFromDb)
+
+router.post('/DLadmin',LoginAdminFromDb)
+
+router.patch('/Duser/:id',enterBankDetails)
 
 module.exports = router
 

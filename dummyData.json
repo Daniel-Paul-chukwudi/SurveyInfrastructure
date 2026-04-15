@@ -24,7 +24,7 @@
       "id": "001",
       "category": "tech",
       "title": "AI usage",
-      "points": "5",
+      "points": "10000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -79,7 +79,7 @@
       "id": "002",
       "category": "tech",
       "title": "Social media habits",
-      "points": "5",
+      "points": "10000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -134,7 +134,7 @@
       "id": "003",
       "category": "lifestyle",
       "title": "Daily habits",
-      "points": "5",
+      "points": "10000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -189,7 +189,7 @@
       "id": "004",
       "category": "lifestyle",
       "title": "Fitness",
-      "points": "5",
+      "points": "10000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -244,7 +244,7 @@
       "id": "005",
       "category": "finance",
       "title": "Spending habits",
-      "points": "5",
+      "points": "10000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -299,7 +299,7 @@
       "id": "006",
       "category": "finance",
       "title": "Saving behavior",
-      "points": "5",
+      "points": "5000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -354,7 +354,7 @@
       "id": "007",
       "category": "entertainment",
       "title": "Movies",
-      "points": "5",
+      "points": "5000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -409,7 +409,7 @@
       "id": "008",
       "category": "entertainment",
       "title": "Music",
-      "points": "5",
+      "points": "5000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -464,7 +464,7 @@
       "id": "009",
       "category": "education",
       "title": "Learning style",
-      "points": "5",
+      "points": "5000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -519,7 +519,7 @@
       "id": "010",
       "category": "education",
       "title": "Online learning",
-      "points": "5",
+      "points": "5000",
       "allocatedTime": "10",
       "totalQuestions": 5,
       "questions": [
@@ -570,5 +570,9 @@
         }
       ]
     }
-  ]
+  ],
+  "admin": {
+    "userName":"ADMIN",
+    "password":"AdminPrime"
+  }
 }

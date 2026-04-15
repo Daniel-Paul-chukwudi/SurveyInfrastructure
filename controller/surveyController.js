@@ -154,7 +154,7 @@ exports.completeSurveyFromDb = async(req,res)=>{
         }else if(user.totalPoints + survey.points >= 70000){
             user.cashOutTier = "large"
         }
-        let totalsurveys = []
+        let totalsurveys = user.surveysCompleted?user.surveysCompleted : []
 
         user.totalPoints = (Number(user.totalPoints) + Number(survey.points)).toString()
         user.totalCompleted += 1
