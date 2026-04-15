@@ -19,17 +19,21 @@ const writeTODb= (content)=>{
 exports.createUser = async (req,res) =>{
     try {
 
-        const {fullName,email,phoneNumber,password} = req.body
+        const {firstName,lastName,email,phoneNumber,password,address,city,country} = req.body
 
 
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
 
         const newUser = new userModel({
-            fullName,
+            firstName,
+            lastName,
             email,
             phoneNumber,
-            password: hashedPassword
+            password: hashedPassword,
+            address,
+            city,
+            country
         })
 
         await newUser.save()
@@ -49,9 +53,9 @@ exports.createUser = async (req,res) =>{
 exports.createUserFromDb = async (req,res) =>{
     try {
 
-        const {fullName,email,phoneNumber,password} = req.body
+        const {firstName,lastName,email,phoneNumber,password,address,city,country} = req.body
 
-        if(!fullName || !email || !phoneNumber || !password){
+        if(!firstName || !lastName || !email || !phoneNumber || !password || !address || !city || !country){
             return res.status(403).json({
                 message: "Please enter all fields"
             })
@@ -81,12 +85,19 @@ exports.createUserFromDb = async (req,res) =>{
             userId = `${randomNumgenerator()}`
         }while (IDs.includes(userId))
 
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password, salt)
+
         const newUser = {
             id: userId,
-            fullName,
+            firstName,
+            lastName,
             email,
             phoneNumber,
-            password,
+            password: hashedPassword,
+            address,
+            city,
+            country,
             totalPoints : 0,
             totalCompleted: 0
         }
@@ -161,11 +172,18 @@ exports.LoginUserFromDb = async (req,res) =>{
             return res.status(403).json({
                 message: "Invalid login credentials"
             })
-        }else if(user.password !== password){
-            return res.status(403).json({
-                message: "Invalid login credentials"
-            })
         }
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ 
+                message: 'Invalid login credentials' 
+            });
+        }
+        // if(user.password !== password){
+        //     return res.status(403).json({
+        //         message: "Invalid login credentials"
+        //     })
+        // }
         const token = await jwt.sign({id:user.id},process.env.JWT_SECRET)
 
         
@@ -245,29 +263,40 @@ exports.LoginAdminFromDb = async (req,res) =>{
 exports.enterBankDetails = async (req,res) =>{
     try {
         const id = req.params.id
-        const {accountNumber,date} = req.body
+        const {bankName,cardHolder,cardNumber,expiryDate,iban,cvv} = req.body
 
-        if(!accountNumber || !date){
-            return res.status(403).json({
-                message: "Please enter all fields"
-            })
-        }
+        // if(!accountNumber || !date){
+        //     return res.status(403).json({
+        //         message: "Please enter all fields"
+        //     })
+        // }
         
         let user
+        let index = 0
 
         for (const x of DB.users){
-            if (x.id === id){
+            if (x.id !== id){
+                index += 1
+            }else{
                 user = x
             }
         } 
-        user.accountNumber = accountNumber
-        user.date = date
+        // user.accountNumber = accountNumber
+        // user.date = date
+        updatedUser = {
+            ...user,
+            ...req.body
+        }
+        DB.users[index] = updatedUser
+        // console.log(index);
+        
+
 
         writeTODb(DB)
         
         res.status(200).json({
         message: 'user Updated successfully',
-        data: user
+        data: DB.users[index]
         })
         
     } catch (error) {
