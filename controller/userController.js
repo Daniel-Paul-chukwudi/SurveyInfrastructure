@@ -29,7 +29,7 @@ exports.createUser = async (req,res) =>{
 
         const exists = await userModel.find({email})
 
-        if(exists){
+        if(exists > 0){
             return res.status(403).json({
                 message:'email already in use please login'
 
@@ -68,12 +68,14 @@ exports.LoginUser = async (req,res) =>{
         const {email,password} = req.body
 
         const user = await userModel.find({email})
+        
+        
         if (!user){
             return res.status(403).json({
                 message: "Invalid login credentials"
             })
         }
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password, user[0].password);
         if (!isMatch) {
             return res.status(400).json({ 
                 message: 'Invalid login credentials' 
@@ -127,18 +129,22 @@ exports.enterDetails = async (req,res) =>{
         const {bankName,cardHolder,cardNumber,expiryDate,iban,cvv,address,city,country} = req.body
         
         const user = await userModel.findById(id)
-
-
-        const updatedUser = {
-            ...user,
-            ...req.body
-        }
         
-        const updated = await userModel.updateOne({id},updatedUser)
+        user.bankName = bankName
+        user.cardHolder = cardHolder,
+        user.cardNumber = cardNumber,
+        user.expiryDate = expiryDate,
+        user.iban = iban,
+        user.cvv = cvv,
+        user.address = address,
+        user.city = city,
+        user.country = country
+
+        await user.save()
         
         res.status(200).json({
         message: 'user Updated successfully',
-        data: updated
+        data: user
         })
         
     } catch (error) {

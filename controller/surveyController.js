@@ -91,7 +91,15 @@ exports.completeSurvey = async(req,res)=>{
         const surveyId = req.params.Sid
 
         const user = await userModel.findById(userId)
-        const survey = await surveyModel.findById(surveyId)
+        
+        let survey
+        for (const y of DB.surveys){
+            if (y.id === surveyId){
+                survey = y
+            }
+        }
+        
+        // const survey = await surveyModel.findById(surveyId)
 
         // if(user.totalPoints + survey.points >= 20000){
         //     user.cashOutReady = true

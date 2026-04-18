@@ -41,7 +41,6 @@ const userSchema =new mongoose.Schema({
       email: {
         type: String,
         required: true,
-        trim: true
       },
       phoneNumber:{
         type: String,
@@ -62,7 +61,7 @@ const userSchema =new mongoose.Schema({
       surveysCompleted:[
         {
         survey: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: String,
         },
         dateCompleted: {
             type: String,
