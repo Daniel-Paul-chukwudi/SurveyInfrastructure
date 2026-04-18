@@ -16,20 +16,20 @@ app.use(cors())
 app.use(surveyRouter)
 app.use(userRouter)
 
-app.listen(PORT, () => {
-  console.log('Server is running on Port:', PORT)
-})
+// app.listen(PORT, () => {
+//   console.log('Server is running on Port:', PORT)
+// })
 
 
-// const Startserver = async ()=>{ 
-//   mongoose.connect(DB).then(() => {
-//     console.log('Connected to Database')
-//     app.listen(PORT, () => {
-//       console.log('Server is running on Port:', PORT)
-//     })
-//   }).catch((error) => {
-//     console.log('Error connecting to Database', error.message)
-//   });
-// };
+const Startserver = async ()=>{ 
+  mongoose.connect(DB).then(() => {
+    console.log('Connected to Database')
+    app.listen(PORT, () => {
+      console.log('Server is running on Port:', PORT)
+    })
+  }).catch((error) => {
+    console.log('Error connecting to Database', error.message)
+  });
+};
 
-// Startserver();
+Startserver();

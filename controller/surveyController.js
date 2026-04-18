@@ -93,14 +93,14 @@ exports.completeSurvey = async(req,res)=>{
         const user = await userModel.findById(userId)
         const survey = await surveyModel.findById(surveyId)
 
-        if(user.totalPoints + survey.points >= 20000){
-            user.cashOutReady = true
-            user.cashOutTier = "small"
-        }else if(user.totalPoints + survey.points >= 50000){
-            user.cashOutTier = "medium"
-        }else if(user.totalPoints + survey.points >= 70000){
-            user.cashOutTier = "large"
-        }
+        // if(user.totalPoints + survey.points >= 20000){
+        //     user.cashOutReady = true
+        //     user.cashOutTier = "small"
+        // }else if(user.totalPoints + survey.points >= 50000){
+        //     user.cashOutTier = "medium"
+        // }else if(user.totalPoints + survey.points >= 70000){
+        //     user.cashOutTier = "large"
+        // }
 
 
         user.totalPoints +=  survey.points

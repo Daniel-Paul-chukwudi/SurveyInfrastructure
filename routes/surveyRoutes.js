@@ -3,12 +3,12 @@ const {addSurvey,getAll,completeSurvey,getAllFromDb,completeSurveyFromDb} = requ
 
 router.post('/survey',addSurvey)
 
-router.post('/survey/:id/:Sid',completeSurvey)
+// router.post('/survey/:id/:Sid',completeSurvey)
 
 router.get('/survey',getAll)
 
 router.get('/Dsurvey',getAllFromDb)
 
-router.post('/Dsurvey/:id/:Sid',completeSurveyFromDb)
+router.post('/Dsurvey/:id/:Sid',completeSurvey)
 
 module.exports = router

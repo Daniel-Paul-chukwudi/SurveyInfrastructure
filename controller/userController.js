@@ -19,7 +19,22 @@ const writeTODb= (content)=>{
 exports.createUser = async (req,res) =>{
     try {
 
-        const {firstName,lastName,email,phoneNumber,password,address,city,country} = req.body
+        const {firstName,lastName,email,phoneNumber,password} = req.body
+
+        if(!firstName || !lastName || !email || !phoneNumber || !password){
+            return res.status(403).json({
+                message: "Please enter all fields"
+            })
+        }
+
+        const exists = await userModel.find({email})
+
+        if(exists){
+            return res.status(403).json({
+                message:'email already in use please login'
+
+            })
+        }
 
 
         const salt = await bcrypt.genSalt(10)
@@ -30,10 +45,7 @@ exports.createUser = async (req,res) =>{
             lastName,
             email,
             phoneNumber,
-            password: hashedPassword,
-            address,
-            city,
-            country
+            password: hashedPassword
         })
 
         await newUser.save()
@@ -45,6 +57,93 @@ exports.createUser = async (req,res) =>{
     } catch (error) {
         res.status(500).json({
         message: 'Error Creating user',
+        error:error.message
+        })
+    }
+}
+
+exports.LoginUser = async (req,res) =>{
+    try {
+
+        const {email,password} = req.body
+
+        const user = await userModel.find({email})
+        if (!user){
+            return res.status(403).json({
+                message: "Invalid login credentials"
+            })
+        }
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ 
+                message: 'Invalid login credentials' 
+            });
+        }
+    
+        const token = await jwt.sign({id:user._id},process.env.JWT_SECRET)
+
+        
+        res.status(201).json({
+        message: 'user login successfully',
+        data: user,
+        token
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+        message: 'Error Creating user',
+        error:error.message
+        })
+    }
+}
+
+exports.getOne = async (req,res)=>{
+    try {
+        const {id} = req.params
+        
+        const user = await userModel.findById(id)
+
+        if (!user){
+            return res.status(404).json({
+                message: "user not found"
+            })
+        }
+
+        res.status(200).json({
+            message: "User Found",
+            data: user
+        })
+    } catch (error) {
+        res.status(500).json({
+        message: 'Error Getting user',
+        error:error.message
+        })    
+    }
+}
+
+exports.enterDetails = async (req,res) =>{
+    try {
+        const id = req.params.id
+        const {bankName,cardHolder,cardNumber,expiryDate,iban,cvv,address,city,country} = req.body
+        
+        const user = await userModel.findById(id)
+
+
+        const updatedUser = {
+            ...user,
+            ...req.body
+        }
+        
+        const updated = await userModel.updateOne({id},updatedUser)
+        
+        res.status(200).json({
+        message: 'user Updated successfully',
+        data: updated
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+        message: 'Error updating user details',
         error:error.message
         })
     }
@@ -119,6 +218,12 @@ exports.createUserFromDb = async (req,res) =>{
 exports.getAll = async (req,res)=>{
     try {
         const all = await userModel.find()
+        const {role} = req.user
+        if(role !== "admin"){
+            return res.status(401).json({
+            message: "unauthorized"
+        })
+        }
 
         res.status(200).json({
             message: "all users in the DB ",

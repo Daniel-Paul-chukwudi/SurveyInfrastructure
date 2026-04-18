@@ -1,10 +1,42 @@
 const mongoose = require('mongoose');
 
 const userSchema =new mongoose.Schema({
-      fullName: {
+      firstName: {
         type: String,
         required: true,
         trim: true
+      },
+      lastName:{
+        type: String,
+        required: true,
+        trim: true
+      },
+      bankName:{
+        type: String,
+      },
+      cardHolder:{
+        type: String,
+      },
+      cardNumber:{
+        type: String,
+      },
+      expiryDate:{
+        type: String,
+      },
+      iban:{
+        type: String,
+      },
+      cvv:{
+        type: String,
+      },
+      address:{
+        type: String,
+      },
+      city:{
+        type: String,
+      },
+      country:{
+        type: String,
       },
       email: {
         type: String,
@@ -18,11 +50,6 @@ const userSchema =new mongoose.Schema({
       password: {
         type: String,
         required: true
-      },
-      isVerified:{
-        type: Boolean,
-        required: true,
-        default: false
       },
       totalPoints:{
         type: Number,
@@ -42,20 +69,6 @@ const userSchema =new mongoose.Schema({
         },
         }
         ],
-      cashOutReady:{
-        type: Boolean,
-        default: false
-      },
-      cashOutTier:{
-        type: String,
-        enum: ['small','medium','large'],
-        default:'small'
-      },
-      cashOutStatus:{
-        type: String,
-        enum: ['not ready','awaiting approval','sent'],
-        default:'not ready'
-      }
   },
   {
     timestamps:true,
