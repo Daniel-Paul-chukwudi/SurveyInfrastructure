@@ -2,25 +2,6 @@
   "users": [],
   "surveys": [
     {
-      "id": "000",
-      "category": "tech",
-      "title": "tech in daily life",
-      "points": "5",
-      "allocatedTime": "10",
-      "totalQuestions": 1,
-      "questions": [
-        {
-          "question": "why are you short",
-          "options": [
-            "yes",
-            "no",
-            "maybe",
-            "daniel"
-          ]
-        }
-      ]
-    },
-    {
       "id": "001",
       "category": "tech",
       "title": "AI usage",
